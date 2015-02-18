@@ -1,4 +1,4 @@
-package santa;
+package prz.santa.model;
 
 public class LetterToSanta {
     private String from;

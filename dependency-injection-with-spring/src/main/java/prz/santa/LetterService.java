@@ -1,18 +1,21 @@
-package santa;
+package prz.santa;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LetterFinder {
+import prz.santa.letterProviders.LetterProvider;
+import prz.santa.model.LetterToSanta;
+
+public class LetterService {
 
     private LetterProvider letterProvider;
 
     //constructor injection
-    public LetterFinder(LetterProvider letterProvider) {
+    public LetterService(LetterProvider letterProvider) {
         this.letterProvider = letterProvider;
     }
 
-    public LetterFinder() {
+    public LetterService() {
     }
 
     public List<LetterToSanta> getLettersFrom(String name) {

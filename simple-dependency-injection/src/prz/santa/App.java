@@ -16,7 +16,7 @@ public class App {
     private static void constructorInjection() {
         //constructor injection
         LetterProvider letterProvider = new InMemoryLetterProvider();
-        LetterFinder finder = new LetterFinder(letterProvider);
+        LetterService finder = new LetterService(letterProvider);
         for (LetterToSanta letter : finder.getLettersFrom("Janek")) {
             System.out.println(letter);
         }
@@ -25,7 +25,7 @@ public class App {
     private static void setterInjection() {
         //setter injection
         LetterProvider letterProvider = new FilesystemLetterProvider("../letters.txt");
-        LetterFinder finder = new LetterFinder();
+        LetterService finder = new LetterService();
         finder.setLetterProvider(letterProvider);
         for (LetterToSanta letter : finder.getLettersFrom("Ania")) {
             System.out.println(letter);
@@ -36,7 +36,7 @@ public class App {
     private static void interfaceInjection() {
         //interface injection
         //this is actually more complicated, container required
-        LetterFinder finder = new LetterFinder();
+        LetterService finder = new LetterService();
         InjectLetterProvider anotherPerspectiveOnLetterFinder = finder;
 
         LetterProvider letterProvider = new InMemoryLetterProvider();

@@ -3,17 +3,18 @@ package santa.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import santa.FilesystemLetterProvider;
-import santa.LetterFinder;
-import santa.LetterProvider;
+
+import prz.santa.LetterService;
+import prz.santa.letterProviders.FilesystemLetterProvider;
+import prz.santa.letterProviders.LetterProvider;
 
 @Configuration
 public class BeansConfig {
 
     @Bean
     //@Scope(value = "prototype")
-    public LetterFinder letterFinder() {
-        LetterFinder finder = new LetterFinder();
+    public LetterService letterFinder() {
+        LetterService finder = new LetterService();
         finder.setLetterProvider(letterProvider1());
         //finder.setLetterProvider(new InMemoryLetterProvider());
         return finder;
@@ -21,7 +22,7 @@ public class BeansConfig {
 
     @Bean
     public LetterProvider letterProvider1() {
-        LetterProvider provider = new FilesystemLetterProvider("letters.txt");
+        LetterProvider provider = new FilesystemLetterProvider("../letters.txt");
         return provider;
     }
 

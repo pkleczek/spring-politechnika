@@ -7,14 +7,14 @@ import prz.santa.letterProviders.InjectLetterProvider;
 import prz.santa.letterProviders.LetterProvider;
 import prz.santa.model.LetterToSanta;
 
-public class LetterFinder implements InjectLetterProvider {
+public class LetterService implements InjectLetterProvider {
 
     private LetterProvider letterProvider;
     
-    public LetterFinder() {}
+    public LetterService() {}
 
     //constructor injection
-    public LetterFinder(LetterProvider letterProvider) {
+    public LetterService(LetterProvider letterProvider) {
         this.letterProvider = letterProvider;
     }
 

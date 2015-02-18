@@ -1,10 +1,12 @@
-package santa;
+package prz.santa.letterProviders;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import prz.santa.model.LetterToSanta;
 
 public class FilesystemLetterProvider implements LetterProvider {
     private String filename;

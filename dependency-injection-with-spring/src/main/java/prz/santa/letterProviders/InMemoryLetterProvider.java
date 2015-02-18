@@ -1,7 +1,9 @@
-package santa;
+package prz.santa.letterProviders;
 
 import java.util.Arrays;
 import java.util.List;
+
+import prz.santa.model.LetterToSanta;
 
 public class InMemoryLetterProvider implements LetterProvider {
     @Override
