@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="letterFinder" class="santa.LetterFinder">
+        <property name="letterProvider">
+            <bean class="santa.InMemoryLetterProvider"/>
+
+
+            <!--<bean class="santa.FilesystemLetterProvider">
+                <constructor-arg index="0" value="letters.txt"/>
+            </bean>-->
+        </property>
+    </bean>
+
+    <bean id="inneZiarno" class="java.lang.String">
+        <constructor-arg value="To jest przykładowy tekst!"/>
+    </bean>
+
+    <bean class="java.lang.Long">
+        <constructor-arg value="42"/>
+    </bean>
+
+</beans>
